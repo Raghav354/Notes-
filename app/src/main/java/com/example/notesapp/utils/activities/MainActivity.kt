@@ -1,14 +1,13 @@
 package com.example.notesapp.utils.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -50,7 +49,6 @@ class MainActivity : AppCompatActivity(), NoteAdaptor.OnClickListener {
 
 
         noteViewModel.allNotes.observe(this) {
-
 
             notesAdaptor.submitList(it)
         }
@@ -98,7 +96,9 @@ class MainActivity : AppCompatActivity(), NoteAdaptor.OnClickListener {
                 Snackbar.make(this@MainActivity, recyclerView, "Deleted Note", Snackbar.LENGTH_LONG)
                     .setAction("Undo") {
                         noteViewModel.addNote(removedItem)
+
                     }.show()
+
             }
 
         }).attachToRecyclerView(recyclerView)

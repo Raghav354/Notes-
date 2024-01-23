@@ -1,18 +1,15 @@
 package com.example.notesapp.utils.activities
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
 import android.widget.NumberPicker
 import android.widget.Toast
-import android.widget.Toolbar
-import androidx.room.util.splitToIntList
+import androidx.appcompat.app.AppCompatActivity
 import com.example.notesapp.R
 import com.example.notesapp.databinding.ActivityAddEditBinding
-import com.example.notesapp.databinding.ActivityMainBinding
 import com.example.notesapp.utils.Constants
 
 class AddEditActivity : AppCompatActivity() {
@@ -33,7 +30,7 @@ class AddEditActivity : AppCompatActivity() {
         toolbar = binding.toolbar
 
 
-        numberPicker.minValue = 0
+        numberPicker.minValue = 1
         numberPicker.maxValue = 10
 
         setSupportActionBar(toolbar)
