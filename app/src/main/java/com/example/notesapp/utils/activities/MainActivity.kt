@@ -33,6 +33,8 @@ class MainActivity : AppCompatActivity(), NoteAdaptor.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        setSupportActionBar(binding.toolbar)
+
 
         addNoteButton = binding.addNoteButton
         recyclerView = binding.recyclerView

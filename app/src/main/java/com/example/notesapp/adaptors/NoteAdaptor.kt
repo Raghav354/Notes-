@@ -46,7 +46,6 @@ class NoteAdaptor(val listener: MainActivity) :
         var colorPos = note.priority
         val color = when (colorPos) {
 
-
             1 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color7)
             2 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color7)
             3 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color7)

@@ -4,5 +4,6 @@
     <item
         android:id="@+id/delete_all_note_menu"
         android:title="@string/delete_all_notes"
+        android:icon="@drawable/delete"
         app:showAsAction="never" />
 </menu>
