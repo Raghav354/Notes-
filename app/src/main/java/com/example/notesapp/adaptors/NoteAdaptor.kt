@@ -1,9 +1,12 @@
 package com.example.notesapp.adaptors
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -40,6 +43,28 @@ class NoteAdaptor(val listener: MainActivity) :
         holder.textViewTitle.text = note.title
         holder.textViewDescription.text = note.description
         holder.textViewPriority.text = note.priority.toString()
+        var colorPos = note.priority
+        val color = when (colorPos) {
+
+
+            1 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color7)
+            2 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color7)
+            3 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color7)
+
+            4 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color4)
+            5 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color4)
+            6 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color4)
+            7 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color4)
+
+            8 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color3)
+            9 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color3)
+            10 -> ContextCompat.getColor(holder.itemView.context, R.color.list_color3)
+            else -> throw IllegalArgumentException("Invalid color position: $colorPos")
+        }
+
+        holder.cardView.setCardBackgroundColor(color)
+
+
     }
 
 
@@ -53,6 +78,7 @@ class NoteAdaptor(val listener: MainActivity) :
         val textViewTitle = view.findViewById(R.id.text_view_title) as TextView
         val textViewDescription = view.findViewById(R.id.textView_description) as TextView
         val textViewPriority = view.findViewById(R.id.text_view_priority) as TextView
+        val cardView = view.findViewById<CardView>(R.id.cardView)
 
         init {
             view.setOnClickListener {
